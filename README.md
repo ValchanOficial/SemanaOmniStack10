@@ -2,7 +2,7 @@
 
 - Nodejs;
 - MongoDB Atlas;
-- Express, Mongoose, mongoose-auto-increment
+- Express, Mongoose, mongoose-auto-increment, Axios
 
 ## 
 
