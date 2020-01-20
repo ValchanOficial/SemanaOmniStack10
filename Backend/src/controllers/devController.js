@@ -34,8 +34,12 @@ class DevController {
             }
     
             const response = await axios.get(`https://api.github.com/users/${github_username}`);
-            const { name = login, avatar_url, bio } = response.data;
+            let { name, login, avatar_url, bio } = response.data;
             
+            if(name === null){
+                name = login;
+            }
+
             dev = await Dev.create({
                 github_username,
                 name,
@@ -44,7 +48,7 @@ class DevController {
                 techs: techsArray,
                 location
             });
-            return res.status(201).json({ message: messages.CREATED(dev) });
+            return res.status(201).json(dev);
         }
 
         return res.status(200).json(dev);

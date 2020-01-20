@@ -1,8 +1,9 @@
-# Semana OmniStack 10 - Rocketseat
+# Projeto Dev Radar - Rocketseat
 
 - Nodejs;
 - MongoDB Atlas;
-- Express, Mongoose, mongoose-auto-increment, Axios
+- Express, Mongoose, mongoose-auto-increment, Axios;
+- React;
 
 ## 
 
@@ -12,5 +13,5 @@
 ```
 2. Execute a aplicação utilizando o comando
 ```
-    npm run dev
+    npm start
 ```

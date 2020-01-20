@@ -1,0 +1,84 @@
+App.js
+
+import React, { useState } from 'react';
+
+// Componente: Bloco isolado de HTML, CSS e JS, o qual não interfere no restante da aplicação
+// é uma function Exemplo()  {} - um componente por arquivo
+
+// Propriedade: Informações que um componente PAI passa para o componente FILHO
+// é um atributo
+
+// Estado: Informações mantidas pelo componente (Lembrar: imutabilidade)
+// import React, { useState } from 'react';
+
+// Fragment <> </> 
+
+import Header from './Header';
+
+function App() {
+  const [counter, setCounter] = useState(0);
+
+  function incrementCounter() {
+    setCounter(counter + 1);
+  }
+
+  return (
+    <> 
+      <Header title="Dev Radar"></Header>
+      <h1>Contador: {counter}</h1>
+      <button onClick={incrementCounter}>Incrementar</button>
+    </>
+  );
+}
+
+export default App;
+
+------------------------------------------
+
+Header.JS
+
+import React from 'react';
+
+function Header(props) {
+    return <h1>{props.title}</h1>
+}
+
+export default Header;
+
+Ctrl + Shift + P > Preferences JSON
+
+------------------------------------------
+
+"emmet.syntaxProfiles": {
+    "javascript": "jsx",
+},
+"emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+}
+
+------------------------------------------
+const [latitude, setLatitude] = useState('');
+const [longitude, setLongitude] = useState('');
+
+// [] executa uma única vez, [let] executa mais vezes
+useEffect(() => {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+      setLatitude(latitude); //atualiza valores no estado
+      setLongitude(longitude);
+    },
+    (err) => {
+      console.log(err);
+    },{
+      timeout: 30000
+    }
+  )
+}, []);
+
+
+// valor do estado para o input
+value={latitude} 
+
+// valor do input para o estado
+onChange={e => setLatitude(e.target.value)}

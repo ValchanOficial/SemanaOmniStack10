@@ -4,7 +4,7 @@
   "description": "Backend do projeto da Semana OmniStack 10",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
     "mongoose-auto-increment": "^5.0.1"
