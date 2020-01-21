@@ -9,9 +9,9 @@ function DevItem({ dev, onDelete, onUpdate }) {
         await onDelete(dev._id)
     }
 
-    function handleUpdateDev(e) {
+    async function handleUpdateDev(e) {
         e.preventDefault()
-        onUpdate(dev)
+        await onUpdate(dev)
     }
 
     return(

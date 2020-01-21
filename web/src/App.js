@@ -10,8 +10,6 @@ import DevForm from './component/DevForm';
 import DevItem from './component/DevItem';
 
 function App() {
-  const modal = document.getElementById('updateModal')
-
   const [devs, setDevs] = useState([]);
 
   useEffect(() => {
@@ -35,15 +33,10 @@ function App() {
   }
 
   async function handleUpdateDev(dev) {
-    const input = document.getElementById('editTech')
-    input.value = dev.techs.map(tech => tech+", ")
-    modal.style.display = 'block'
-
-    console.log(dev);
-    console.log("aaaaaaaaaaaaaaaaaa");
-    const response = await api.put(`/devs/${dev._id}`);
-    console.log(response)
-    setDevs([...devs, response.data]);
+    const getDev = await api.get(`/devs/${dev._id}`)
+    //const response = await api.put(`/devs/${dev._id}`);
+    console.log(getDev)
+    // setDevs([...devs, response.data]);
   }
 
   return (
